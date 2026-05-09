@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Roadmap | Login</title>
+  <link rel="icon" href="https://www.slideteam.net/wp/wp-content/uploads/2022/11/Career-Roadmap-Presentation-1024x576.png">
+  <link rel="stylesheet" href="/static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="background-animation"></div>
+<div class="container">
+  <div class="card">
+    <h1>Career Roadmap 🚀</h1>
+    <p class="welcome-text">Build your future with smart career planning</p>
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Sign in to continue</p>
+    {% if error %}
+    <div class="error-message">{{ error }}</div>
+    {% endif %}
+    <form method="post" action="/login">
+      <div class="input-group">
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter username" required>
+      </div>
+      <div class="input-group password-group">
+        <label>Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+        <span class="toggle-password" onclick="togglePassword('password')">👁</span>
+      </div>
+      <button type="submit" class="btn-primary">Sign In</button>
+    </form>
+    <p class="bottom-text">
+      Don't have an account? <a href="/register">Create Account</a>
+    </p>
+  </div>
+</div>
+<script>
+function togglePassword(id) {
+  const field = document.getElementById(id);
+  field.type = field.type === "password" ? "text" : "password";
+}
+</script>
+</body>
+</html>

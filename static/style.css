@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    color: white;
+}
+
+.background-animation::before,
+.background-animation::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    animation: float 8s infinite ease-in-out;
+}
+
+.background-animation::before {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    left: -80px;
+}
+
+.background-animation::after {
+    width: 250px;
+    height: 250px;
+    bottom: -100px;
+    right: -80px;
+    animation-delay: 3s;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 2;
+}
+
+.card {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 28px;
+    padding: 55px 45px;
+    text-align: center;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+    animation: fadeUp 1s ease;
+}
+
+.card h1 {
+    color: #ffffff;
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.card h2 {
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.welcome-text {
+    color: #e2e8f0;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    color: #dbeafe;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.error-message {
+    background: rgba(255, 0, 0, 0.15);
+    color: #ffcaca;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.input-group {
+    margin-bottom: 25px;
+    text-align: left;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: #d1d5db;
+}
+
+.input-group input:focus {
+    border-color: #60a5fa;
+    background: rgba(255,255,255,0.12);
+    box-shadow: 0 0 12px rgba(96,165,250,0.4);
+    transform: scale(1.01);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 42px;
+    color: #dbeafe;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.toggle-password:hover {
+    transform: scale(1.2);
+    color: white;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s ease;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,114,255,0.45);
+}
+
+.bottom-text {
+    color: #f1f5f9;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.bottom-text a {
+    color: #93c5fd;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 6px;
+    transition: 0.3s;
+}
+
+.bottom-text a:hover {
+    color: white;
+    text-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+.roadmap-card {
+    margin-top: 25px;
+    background: rgba(0,0,0,0.85);
+    padding: 30px;
+    border-radius: 14px;
+    text-align: left;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.roadmap-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #00cec9;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 15px;
+}
+
+.timeline-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: fadeUp 0.6s ease-in-out;
+}
+
+.circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.step-text {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(20px); }
+    100% { transform: translateY(0px); }
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 30px 20px;
+    }
+    .card h1 { font-size: 28px; }
+    .card h2 { font-size: 22px; }
+    .welcome-text, .subtitle { font-size: 14px; }
+    .input-group input { font-size: 14px; }
+    .btn-primary { font-size: 14px; padding: 12px; }
+    .roadmap-card h2 { font-size: 18px; }
+    .step-text { font-size: 13px; }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Roadmap | Dashboard</title>
+    <link rel="icon" href="https://www.slideteam.net/wp/wp-content/uploads/2022/11/Career-Roadmap-Presentation-1024x576.png">
+  <link rel="stylesheet" href="/static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="background-animation"></div>
+<div class="container">
+  <div class="card">
+    <h1>AI Career Roadmap Generator 🚀</h1>
+    <form action="/generate" method="post">
+      <div class="input-group">
+        <label>Year</label>
+        <select name="year" required>
+          <option disabled selected>-- Choose Year --</option>
+          <option>1st Year</option>
+          <option>2nd Year</option>
+          <option>3rd Year</option>
+          <option>4th Year</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>Branch</label>
+        <select name="branch" required>
+          <option disabled selected>-- Choose Branch --</option>
+          <option>CSE</option>
+          <option>ECE</option>
+          <option>EEE</option>
+          <option>Mechanical</option>
+          <option>Civil</option>
+          <option>IT</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>Goal</label>
+        <select name="goal" required>
+          <option disabled selected>-- Choose Path --</option>
+          <option>Web Development</option>
+          <option>AI / ML</option>
+          <option>Data Science</option>
+          <option>Cybersecurity</option>
+          <option>Cloud Computing</option>
+          <option>Mobile App Development</option>
+          <option>UI/UX Design</option>
+          <option>DevOps</option>
+          <option>Blockchain</option>
+          <option>Job Preparation</option>
+          <option>General Growth</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-primary">Generate Roadmap</button>
+    </form>
+    {% if roadmap %}
+    <div class="roadmap-card">
+      <h2>Your Roadmap</h2>
+      <p><b>Year:</b> {{ year }}</p>
+      <p><b>Branch:</b> {{ branch }}</p>
+      <p><b>Goal:</b> {{ goal }}</p>
+      <div class="timeline">
+        {% for step in roadmap %}
+        <div class="timeline-step">
+          <div class="circle">{{ loop.index }}</div>
+          <div class="step-text">{{ step }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+</body>
+</html>
